@@ -1,0 +1,31 @@
+FÖRBERED PROJEKT FÖR RELEASE 
+> distmappen ska ej upp till git 
+> public mappen ska inte heller upp (den skapas när vi kör css)
+> modellen, sas, src, test, vyer + app.js är det som behövs 
+
+> database url ska skrivas om i en miljövariabel. 
+
+    När vi befinner oss i production ska miljövariabeln för porten ska vara: 
+    if(process.env.NODE_ENV == "production") {
+        //värdet hämtas från miljövariabel i heroku
+        dbConfig.databaseURL = process.end.MONGO_ATLAS_URL 
+    } else {
+        const dbConfig = require("./config/config")
+    }
+   
+
+> Installera webpack 
+Insufficient number of arguments or no entry found.
+Alternatively, run 'webpack(-cli) --help' for usage info.
+> felmeddelandet betyder att vi måste konfigurera vad webpack ska göra! 
+> webpack ska generera en bundle, så vi säger i vår config vart den ska göra detta
+
+
+> Kontrollera att bundle fungerar: 
+> Kör programmet node dist/bundle.js
+
+
+
+
+
+databaseURL: "mongodb+srv://dbAdmin:dbAdminPassword@webshoptest-vzn1e.mongodb.net/webbshopcollection?retryWrites=true&w=major

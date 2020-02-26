@@ -1,0 +1,54 @@
+1. skapa ett node projekt (init) X 
+2. github repo X 
+3. filstruktur X 
+4. definiera Minimal Viable Product 
+    - (mobilanpassad) En vy med en produktlista av varor som går att scrolla igenom
+    - En vy med enskild produkt (vald produkt)
+    - En kundkorg 
+    - 
+
+
+5. Skriva tester 
+6. Påbörja själva utvecklingen 
+
+----
+Mobile First Design 
+
+---
+OM MAN VILL ANVÄNDA VIM 
+
+vim filensnamn.ändelse
+i 
+<skriv in det som ska in genom vim> 
+escape (tar dig ut ut insert-mode)
+:wq! 
+
+-----------
+
+Testa servern mot SRC, istället för genom app.js, 
+
+
+---------
+
+sass och sass middleware i projektet: 
+    > vi slipper använda gulp, 
+    eftersom vi genom middleware har tillgång till debug och outputStyle. 
+    > att inte skriva direkt i package.json's scripts utan använda den metoden kör den middlware först, 
+    sedan compilar den. 
+    > middlewares körs alltid först när en get-request görs
+    > i produktion tar man ju bort dev-dependencies (sass-middleware är en dev-dependency), 
+
+> man har en public-mapp som blir output för sin css 
+> man har en sass-mapp (innehåller main.scss t.ex) som vi kompilerar ifrån 
+
+                    //importera sassMiddleWare 
+                    const sassMiddleWare = require("node-sass-middleware")
+
+                    //hur man lägger till middleware
+                    app.use(sassMiddleWare {
+                        src: "sass", 
+                        dest: "public",
+                        debug: true,
+                        outputStyle: "compressed" 
+                    }))
+
